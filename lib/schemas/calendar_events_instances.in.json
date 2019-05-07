@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "alwaysIncludeEmail": {
+            "type": "boolean"
+        },
+        "calendarId": {
+            "required": true,
+            "type": "string"
+        },
+        "eventId": {
+            "required": true,
+            "type": "string"
+        },
+        "maxAttendees": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "originalStart": {
+            "type": "string"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "showDeleted": {
+            "type": "boolean"
+        },
+        "timeMax": {
+            "type": "string"
+        },
+        "timeMin": {
+            "type": "string"
+        },
+        "timeZone": {
+            "type": "string"
+        }
+    }
+}

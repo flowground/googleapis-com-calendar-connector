@@ -1,0 +1,65 @@
+{
+    "type": "object",
+    "properties": {
+        "calendarId": {
+            "required": true,
+            "type": "string"
+        },
+        "ruleId": {
+            "required": true,
+            "type": "string"
+        },
+        "sendNotifications": {
+            "type": "boolean"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "etag": {
+                    "description": "ETag of the resource.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Identifier of the ACL rule.",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "calendar#aclRule",
+                    "description": "Type of the resource (\"calendar#aclRule\").",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "The role assigned to the scope. Possible values are:  \n- \"none\" - Provides no access. \n- \"freeBusyReader\" - Provides read access to free/busy information. \n- \"reader\" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. \n- \"writer\" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. \n- \"owner\" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs.",
+                    "type": "string"
+                },
+                "scope": {
+                    "description": "The scope of the rule.",
+                    "properties": {
+                        "type": {
+                            "description": "The type of the scope. Possible values are:  \n- \"default\" - The public scope. This is the default value. \n- \"user\" - Limits the scope to a single user. \n- \"group\" - Limits the scope to a group. \n- \"domain\" - Limits the scope to a domain.  Note: The permissions granted to the \"default\", or public, scope apply to any user, authenticated or not.",
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The email address of a user or group, or the name of a domain, depending on the scope type. Omitted for type \"default\".",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

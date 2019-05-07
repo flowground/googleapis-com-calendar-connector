@@ -1,0 +1,73 @@
+{
+    "type": "object",
+    "properties": {
+        "alwaysIncludeEmail": {
+            "type": "boolean"
+        },
+        "calendarId": {
+            "required": true,
+            "type": "string"
+        },
+        "iCalUID": {
+            "type": "string"
+        },
+        "maxAttendees": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 250
+        },
+        "orderBy": {
+            "type": "string",
+            "enum": [
+                "startTime",
+                "updated"
+            ]
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "privateExtendedProperty": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "q": {
+            "type": "string"
+        },
+        "sharedExtendedProperty": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "showDeleted": {
+            "type": "boolean"
+        },
+        "showHiddenInvitations": {
+            "type": "boolean"
+        },
+        "singleEvents": {
+            "type": "boolean"
+        },
+        "syncToken": {
+            "type": "string"
+        },
+        "timeMax": {
+            "type": "string"
+        },
+        "timeMin": {
+            "type": "string"
+        },
+        "timeZone": {
+            "type": "string"
+        },
+        "updatedMin": {
+            "type": "string"
+        }
+    }
+}

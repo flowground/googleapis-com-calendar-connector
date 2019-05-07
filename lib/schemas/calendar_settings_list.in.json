@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "syncToken": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

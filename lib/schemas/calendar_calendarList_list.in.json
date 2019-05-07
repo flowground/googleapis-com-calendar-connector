@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "minAccessRole": {
+            "type": "string",
+            "enum": [
+                "freeBusyReader",
+                "owner",
+                "reader",
+                "writer"
+            ]
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "showDeleted": {
+            "type": "boolean"
+        },
+        "showHidden": {
+            "type": "boolean"
+        },
+        "syncToken": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

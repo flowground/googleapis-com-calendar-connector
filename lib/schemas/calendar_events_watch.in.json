@@ -1,0 +1,124 @@
+{
+    "type": "object",
+    "properties": {
+        "alwaysIncludeEmail": {
+            "type": "boolean"
+        },
+        "calendarId": {
+            "required": true,
+            "type": "string"
+        },
+        "iCalUID": {
+            "type": "string"
+        },
+        "maxAttendees": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 250
+        },
+        "orderBy": {
+            "type": "string",
+            "enum": [
+                "startTime",
+                "updated"
+            ]
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "privateExtendedProperty": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "q": {
+            "type": "string"
+        },
+        "sharedExtendedProperty": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "showDeleted": {
+            "type": "boolean"
+        },
+        "showHiddenInvitations": {
+            "type": "boolean"
+        },
+        "singleEvents": {
+            "type": "boolean"
+        },
+        "syncToken": {
+            "type": "string"
+        },
+        "timeMax": {
+            "type": "string"
+        },
+        "timeMin": {
+            "type": "string"
+        },
+        "timeZone": {
+            "type": "string"
+        },
+        "updatedMin": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "address": {
+                    "description": "The address where notifications are delivered for this channel.",
+                    "type": "string"
+                },
+                "expiration": {
+                    "description": "Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A UUID or similar unique string that identifies this channel.",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "api#channel",
+                    "description": "Identifies this as a notification channel used to watch for changes to a resource. Value: the fixed string \"api#channel\".",
+                    "type": "string"
+                },
+                "params": {
+                    "additionalProperties": {
+                        "description": "Declares a new parameter by name.",
+                        "type": "string"
+                    },
+                    "description": "Additional parameters controlling delivery channel behavior. Optional.",
+                    "type": "object"
+                },
+                "payload": {
+                    "description": "A Boolean value to indicate whether payload is wanted. Optional.",
+                    "type": "boolean"
+                },
+                "resourceId": {
+                    "description": "An opaque ID that identifies the resource being watched on this channel. Stable across different API versions.",
+                    "type": "string"
+                },
+                "resourceUri": {
+                    "description": "A version-specific identifier for the watched resource.",
+                    "type": "string"
+                },
+                "token": {
+                    "description": "An arbitrary string delivered to the target address with each notification delivered over this channel. Optional.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type of delivery mechanism used for this channel.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

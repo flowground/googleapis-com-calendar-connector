@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "alwaysIncludeEmail": {
+            "type": "boolean"
+        },
+        "calendarId": {
+            "required": true,
+            "type": "string"
+        },
+        "eventId": {
+            "required": true,
+            "type": "string"
+        },
+        "maxAttendees": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "timeZone": {
+            "type": "string"
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

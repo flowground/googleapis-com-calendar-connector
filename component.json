@@ -1,0 +1,679 @@
+{
+    "title": "Calendar",
+    "description": "Manipulates events and other calendar data.",
+    "docsUrl": "https://developers.google.com/google-apps/calendar/firstapp",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/calendar/v3/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/calendar/v3",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "calendar_calendars_insert": {
+            "main": "./lib/actions/calendar_calendars_insert.js",
+            "title": "Creates a secondary calendar.",
+            "description": "Creates a secondary calendar.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendars_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendars_delete": {
+            "main": "./lib/actions/calendar_calendars_delete.js",
+            "title": "Deletes a secondary calendar. Use calendars.clear for clearing all events on primary calendars.",
+            "description": "Deletes a secondary calendar. Use calendars.clear for clearing all events on primary calendars.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendars_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendars_get": {
+            "main": "./lib/actions/calendar_calendars_get.js",
+            "title": "Returns metadata for a calendar.",
+            "description": "Returns metadata for a calendar.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendars_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendars_patch": {
+            "main": "./lib/actions/calendar_calendars_patch.js",
+            "title": "Updates metadata for a calendar. This method supports patch semantics.",
+            "description": "Updates metadata for a calendar. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendars_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendars_update": {
+            "main": "./lib/actions/calendar_calendars_update.js",
+            "title": "Updates metadata for a calendar.",
+            "description": "Updates metadata for a calendar.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendars_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_acl_list": {
+            "main": "./lib/actions/calendar_acl_list.js",
+            "title": "Returns the rules in the access control list for the calendar.",
+            "description": "Returns the rules in the access control list for the calendar.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_acl_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_acl_insert": {
+            "main": "./lib/actions/calendar_acl_insert.js",
+            "title": "Creates an access control rule.",
+            "description": "Creates an access control rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_acl_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_acl_watch": {
+            "main": "./lib/actions/calendar_acl_watch.js",
+            "title": "Watch for changes to ACL resources.",
+            "description": "Watch for changes to ACL resources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_acl_watch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_acl_delete": {
+            "main": "./lib/actions/calendar_acl_delete.js",
+            "title": "Deletes an access control rule.",
+            "description": "Deletes an access control rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_acl_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_acl_get": {
+            "main": "./lib/actions/calendar_acl_get.js",
+            "title": "Returns an access control rule.",
+            "description": "Returns an access control rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_acl_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_acl_patch": {
+            "main": "./lib/actions/calendar_acl_patch.js",
+            "title": "Updates an access control rule. This method supports patch semantics.",
+            "description": "Updates an access control rule. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_acl_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_acl_update": {
+            "main": "./lib/actions/calendar_acl_update.js",
+            "title": "Updates an access control rule.",
+            "description": "Updates an access control rule.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_acl_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendars_clear": {
+            "main": "./lib/actions/calendar_calendars_clear.js",
+            "title": "Clears a primary calendar. This operation deletes all events associated with the primary calendar of an account.",
+            "description": "Clears a primary calendar. This operation deletes all events associated with the primary calendar of an account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendars_clear.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_list": {
+            "main": "./lib/actions/calendar_events_list.js",
+            "title": "Returns events on the specified calendar.",
+            "description": "Returns events on the specified calendar.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_insert": {
+            "main": "./lib/actions/calendar_events_insert.js",
+            "title": "Creates an event.",
+            "description": "Creates an event.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_import": {
+            "main": "./lib/actions/calendar_events_import.js",
+            "title": "Imports an event. This operation is used to add a private copy of an existing event to a calendar.",
+            "description": "Imports an event. This operation is used to add a private copy of an existing event to a calendar.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_import.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_quickAdd": {
+            "main": "./lib/actions/calendar_events_quickAdd.js",
+            "title": "Creates an event based on a simple text string.",
+            "description": "Creates an event based on a simple text string.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_quickAdd.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_watch": {
+            "main": "./lib/actions/calendar_events_watch.js",
+            "title": "Watch for changes to Events resources.",
+            "description": "Watch for changes to Events resources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_watch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_delete": {
+            "main": "./lib/actions/calendar_events_delete.js",
+            "title": "Deletes an event.",
+            "description": "Deletes an event.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_get": {
+            "main": "./lib/actions/calendar_events_get.js",
+            "title": "Returns an event.",
+            "description": "Returns an event.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_patch": {
+            "main": "./lib/actions/calendar_events_patch.js",
+            "title": "Updates an event. This method supports patch semantics.",
+            "description": "Updates an event. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_update": {
+            "main": "./lib/actions/calendar_events_update.js",
+            "title": "Updates an event.",
+            "description": "Updates an event.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_instances": {
+            "main": "./lib/actions/calendar_events_instances.js",
+            "title": "Returns instances of the specified recurring event.",
+            "description": "Returns instances of the specified recurring event.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_instances.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_events_move": {
+            "main": "./lib/actions/calendar_events_move.js",
+            "title": "Moves an event to another calendar, i.e. changes an event's organizer.",
+            "description": "Moves an event to another calendar, i.e. changes an event's organizer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_events_move.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_channels_stop": {
+            "main": "./lib/actions/calendar_channels_stop.js",
+            "title": "Stop watching resources through this channel",
+            "description": "Stop watching resources through this channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_channels_stop.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_colors_get": {
+            "main": "./lib/actions/calendar_colors_get.js",
+            "title": "Returns the color definitions for calendars and events.",
+            "description": "Returns the color definitions for calendars and events.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_colors_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_freebusy_query": {
+            "main": "./lib/actions/calendar_freebusy_query.js",
+            "title": "Returns free/busy information for a set of calendars.",
+            "description": "Returns free/busy information for a set of calendars.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_freebusy_query.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendarList_list": {
+            "main": "./lib/actions/calendar_calendarList_list.js",
+            "title": "Returns the calendars on the user's calendar list.",
+            "description": "Returns the calendars on the user's calendar list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendarList_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendarList_insert": {
+            "main": "./lib/actions/calendar_calendarList_insert.js",
+            "title": "Inserts an existing calendar into the user's calendar list.",
+            "description": "Inserts an existing calendar into the user's calendar list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendarList_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendarList_watch": {
+            "main": "./lib/actions/calendar_calendarList_watch.js",
+            "title": "Watch for changes to CalendarList resources.",
+            "description": "Watch for changes to CalendarList resources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendarList_watch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendarList_delete": {
+            "main": "./lib/actions/calendar_calendarList_delete.js",
+            "title": "Removes a calendar from the user's calendar list.",
+            "description": "Removes a calendar from the user's calendar list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendarList_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendarList_get": {
+            "main": "./lib/actions/calendar_calendarList_get.js",
+            "title": "Returns a calendar from the user's calendar list.",
+            "description": "Returns a calendar from the user's calendar list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendarList_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendarList_patch": {
+            "main": "./lib/actions/calendar_calendarList_patch.js",
+            "title": "Updates an existing calendar on the user's calendar list. This method supports patch semantics.",
+            "description": "Updates an existing calendar on the user's calendar list. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendarList_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_calendarList_update": {
+            "main": "./lib/actions/calendar_calendarList_update.js",
+            "title": "Updates an existing calendar on the user's calendar list.",
+            "description": "Updates an existing calendar on the user's calendar list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_calendarList_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_settings_list": {
+            "main": "./lib/actions/calendar_settings_list.js",
+            "title": "Returns all user settings for the authenticated user.",
+            "description": "Returns all user settings for the authenticated user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_settings_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_settings_watch": {
+            "main": "./lib/actions/calendar_settings_watch.js",
+            "title": "Watch for changes to Settings resources.",
+            "description": "Watch for changes to Settings resources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_settings_watch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "calendar_settings_get": {
+            "main": "./lib/actions/calendar_settings_get.js",
+            "title": "Returns a single user setting.",
+            "description": "Returns a single user setting.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/calendar_settings_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

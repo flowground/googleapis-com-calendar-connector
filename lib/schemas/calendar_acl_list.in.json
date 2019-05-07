@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "calendarId": {
+            "required": true,
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "showDeleted": {
+            "type": "boolean"
+        },
+        "syncToken": {
+            "type": "string"
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

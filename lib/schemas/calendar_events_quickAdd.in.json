@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "calendarId": {
+            "required": true,
+            "type": "string"
+        },
+        "sendNotifications": {
+            "type": "boolean"
+        },
+        "sendUpdates": {
+            "type": "string",
+            "enum": [
+                "all",
+                "externalOnly",
+                "none"
+            ]
+        },
+        "text": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}
