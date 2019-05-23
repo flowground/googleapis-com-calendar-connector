@@ -17259,7 +17259,7 @@
                 "description": "Oauth 2.0 authentication",
                 "type": "oauth2",
                 "flows": {
-                    "implicit": {
+                    "authorizationCode": {
                         "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
                         "scopes": {
                             "https://www.googleapis.com/auth/calendar": "See, edit, share, and permanently delete all the calendars you can access using Google Calendar",
@@ -17267,7 +17267,8 @@
                             "https://www.googleapis.com/auth/calendar.events.readonly": "View events on all your calendars",
                             "https://www.googleapis.com/auth/calendar.readonly": "View your calendars",
                             "https://www.googleapis.com/auth/calendar.settings.readonly": "View your Calendar settings"
-                        }
+                        },
+                        "tokenUrl": "https://www.googleapis.com/oauth2/v4/token"
                     }
                 }
             }
